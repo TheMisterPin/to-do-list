@@ -1,6 +1,6 @@
 # Intro 
 
-Hi there, thanks for chacking out my to do list, this is a project in wich im building a todo list using react, i will slowly implement feature and upgrades as I learn more 
+Hi there, thanks for checking out my to do list, this is a project in wich im building a todo list using react, i will slowly implement feature and upgrades as I learn more, construcitve criticism, ideas and suggestions are more than welcome!
 
 # PRE-ALPHA 
 
