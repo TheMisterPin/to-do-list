@@ -5,22 +5,18 @@
   background-color: hsl(34, 78%, 91%);
 }
 
-body {
+* {
   margin: 0;
   padding: 0;
 }
 
 .Sidebar {
-  margin: 0;
-  padding: 0;
   width: 10%;
   height: 100vh;
   background-color: dimgrey;
 }
 
 .Sidebar-list {
-  margin: 0;
-  padding: 0;
   padding-top: 20px;
   list-style: none;
 }
@@ -48,8 +44,10 @@ body {
   flex-direction: row;
 }
 
-.main {
-  width: 70%;
-  height: 80%;
-  background-color: blue;
+
+.todos-list-item.completed {
+  text-decoration: line-through;
 }
+
+
+.todos-list-item.important{color: crimson;}

@@ -1,0 +1,14 @@
+<ul>
+      Doing 
+      {todos.map((todos) => (
+        
+        <li className={'todos-list-item ${todo.completed ? "completed" : " "}'}>
+          <span className= 'todos-list-item'
+           text={todos.input}
+           id={todos.id}
+            onChange={(event) => event.preventDefault()}
+          />
+         
+        </li>
+      ))}
+    </ul>

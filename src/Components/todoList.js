@@ -1,20 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
+import ToDoItem from "./ToDoItem";
 
 const ToDoList = ({ todos, setTodos }) => {
   return (
-    <div>
-      Doing
-      {todos.map((todos) => (
-        <li className="todos-list" key={todos.id}>
-          <input
-            type="text"
-            value={todos.title}
-            className="list"
-            onChange={(event) => event.preventDefault()}
-          />
-         
-        </li>
-      ))}
+    <div className="todo-container">
+      <ul className="todo-list">
+        {todos.map(todo => (
+          <ToDoItem  todo={todo} setTodos={setTodos} todos={todos} key ={todo.id} text={todo.text} />
+        ))}
+      </ul>
     </div>
   );
 };

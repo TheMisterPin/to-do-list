@@ -9,7 +9,7 @@ function Sidebar() {
         {SidebarData.map((val, key) => {
           return (
             <li className='Sidebar-link' key={key}>
-              <icon>{val.icon}</icon>
+              <i>{val.icon}</i>
               <span>{val.title}</span>
             </li>
           );
