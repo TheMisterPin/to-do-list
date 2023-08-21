@@ -7,6 +7,12 @@ Hi there, thanks for checking out my to do list, this is a project in wich im bu
 1.1
 Still in early stages of developement, added header, side bar and imput area, no local storage yet. 
 
+1.2
+Still looks very poor, implemented logic delete, mark as important and done. 
+working on filter.
+
+1.3 
+
 
 
 
