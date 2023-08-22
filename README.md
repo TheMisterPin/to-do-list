@@ -13,7 +13,7 @@ working on filter.
 
 1.3 
 
-
+still looks poor, implemented filter, and local storage. 
 
 
 
