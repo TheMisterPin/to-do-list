@@ -30,15 +30,15 @@ const ToDoItem = ({ text, todo, todos, setTodos }) => {
   };
   const handleComplete = (id) => {
     setTodos(
-      todos.map((item) => {
+      todos.map((item => {
         if (item.id === id) {
           return {
-            ...item,
-            completed: !item.completed,
+            ...item, completed: !item.completed,
+           
           };
         }
         return item;
-      }),
+      })),
     );
   };
 
@@ -50,8 +50,8 @@ const ToDoItem = ({ text, todo, todos, setTodos }) => {
   return (
     <div className="todo">
       <li
-        className={`todos-list-item ${todo.completed ? "completed" : ""} ${
-          todo.important ? "important" : ""
+        className={`todos-list-item ${todo.completed ? "completed" : ''} ${
+          todo.important ? "important" : ''
         }`}
       >
         {text}
