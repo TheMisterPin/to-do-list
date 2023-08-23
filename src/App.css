@@ -1,38 +1,4 @@
-.App {
-  overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
-  background-color: hsl(34, 78%, 91%);
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-.header {
-  display: flex;
-  height: auto;
-  align-items: center;
-  justify-content: center;
-}
-
-#Layout {
-  display: flex;
-  width: 100vw;
-  flex-wrap: wrap;
-  flex-direction: row;
-}
-
-
-.todos-list-item.completed {
-  text-decoration: line-through;
-}
-
-
-.todos-list-item.important{color: crimson;}
-
-
+/*Roots, Imports, functions*/
 :root {
   --pink: #ecb2ba;
   --pink-dark: #c6939a;
@@ -41,6 +7,19 @@
   --transparent: rgba(255, 255, 255, 0);
 }
 
+
+/* App Component */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  background-color: hsl(34, 78%, 91%);
+}
 body {
   background: #ebf4e9;
   padding: 20px;
@@ -48,7 +27,34 @@ body {
   justify-content: center;
   flex-direction: column;
 }
+.layout {
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+/* TextImput Component */
+.input-container {
+  background-color: lightgray;  
+  height: 100%;
+}
 
+/* TodoList Component */
+.list-display {
+  height: calc(30vw);  
+  width: calc(30vw);    
+}
+
+/* ToDoItem Component */
+
+.todos-list-item.completed {
+  text-decoration: line-through;
+}
+
+
+.todos-list-item.important{color: crimson;}
+
+/* Paper Effect  */
 .pink {
   --paper-color: var(--pink);
   --paper-dark: var(--pink-dark);
@@ -166,7 +172,10 @@ body {
   bottom: 0;
 }
 
-
+.btn-Group {
+  z-index: 10; 
+  position: relative; 
+}
 
 .todos-list-item {
   overflow: hidden; 
@@ -175,7 +184,7 @@ body {
   letter-spacing: .15em; 
   animation: 
     typing 3.5s steps(40, end),
-    
+    blink-caret .75s step-end infinite;
 }
 
 /* The typing effect */
@@ -184,14 +193,5 @@ body {
   to { width: 100% }
 }
 
-/* The typewriter cursor effect */
-.input-container {
-  background-color: 'lightgray';  
-  height: '100%';
-}
 
-.list-display {
-    
-  height: 'calc(30vw)';  
-  width: 'calc(30vw)';    
-}
+
