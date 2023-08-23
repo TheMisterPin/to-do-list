@@ -34,7 +34,7 @@ const ToDoItem = ({ text, todo, todos, setTodos }) => {
         if (item.id === id) {
           return {
             ...item, completed: !item.completed,
-           
+
           };
         }
         return item;
@@ -48,34 +48,36 @@ const ToDoItem = ({ text, todo, todos, setTodos }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className="todo">
-      <li
-        className={`todos-list-item ${todo.completed ? "completed" : ''} ${
-          todo.important ? "important" : ''
-        }`}
-      >
-        {text}
-      </li>
-      <div className="list-btn-container">
-        <button className="done-btn" onClick={() => handleComplete(todo.id)}>
-          <FontAwesomeIcon icon={faCheckCircle} />
-        </button>
-
-        <button className="delete-btn" onClick={() => handleDelete(todo.id)}>
-          <FontAwesomeIcon
-            icon={faTrashCan}
-            shake={isHovered ? true : false}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          />
-        </button>
-
-        <button
-          className="important-btn"
-          onClick={() => handleImportant(todo.id)}
+    <div className={`todo ${todo.important ? "important" : ''
+      }`}>
+      <div className="paper blue">
+        <div className="top-tape"></div> <p
+          className={`todos-list-item ${todo.completed ? "completed" : ''} ${todo.important ? "important" : ''
+            }`}
         >
-          <FontAwesomeIcon icon={faBookmark} />
-        </button>
+          {text}
+        </p>
+        <div className="list-btn-container">
+          <button className="done-btn" onClick={() => handleComplete(todo.id)}>
+            <FontAwesomeIcon icon={faCheckCircle} />
+          </button>
+
+          <button className="delete-btn" onClick={() => handleDelete(todo.id)}>
+            <FontAwesomeIcon
+              icon={faTrashCan}
+              shake={isHovered ? true : false}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            />
+          </button>
+
+          <button
+            className="important-btn"
+            onClick={() => handleImportant(todo.id)}
+          >
+            <FontAwesomeIcon icon={faBookmark} />
+          </button>
+        </div>
       </div>
     </div>
   );
