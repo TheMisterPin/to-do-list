@@ -1,6 +1,28 @@
+# Intro 
+
+Hi there, thanks for checking out my to do list, this is a project in wich im building a todo list using react, i will slowly implement feature and upgrades as I learn more, construcitve criticism, ideas and suggestions are more than welcome!
+
+# PRE-ALPHA 
+
+1.1
+Still in early stages of developement, added header, side bar and imput area, no local storage yet. 
+
+1.2
+Still looks very poor, implemented logic delete, mark as important and done. 
+working on filter.
+
+1.3 
+
+still looks poor, implemented filter, and local storage. 
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
