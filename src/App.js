@@ -1,9 +1,8 @@
 import "./App.css";
 import React, { useEffect, useState } from "react";
-import Sidebar from "./Components/Sidebar";
-import Header from "./Components/header";
 import TextImput from "./Components/textImput";
 import ToDoList from "./Components/todoList";
+import { Container, Row, Col } from 'react-grid-system';
 
 const App = () => {
   //STATES
@@ -40,11 +39,18 @@ const App = () => {
         break;
     }
   };
+
+
+
+    
+ 
+  
   // LOCAL STORAGE
   const saveLocalTodos = () => {
-    if (todos.length > 0) { 
-    localStorage.setItem("todos", JSON.stringify(todos));
-  };}
+    if (todos.length > 0) {
+      localStorage.setItem("todos", JSON.stringify(todos));
+    }
+  };
   const getLocalTodos = () => {
     if (localStorage.getItem("todos") === null) {
       localStorage.setItem("todos", JSON.stringify([]));
@@ -57,23 +63,26 @@ const App = () => {
   //RENDER APP
   return (
     <div className="App">
-      <Header />
-      <div id="Layout">
-        <Sidebar />
-        <TextImput
-          input={input}
-          setInput={setInput}
-          todos={todos}
-          setTodos={setTodos}
-          setStatus={setStatus}
-        />
-        <ToDoList
-          filteredTodos={filteredTodos}
-          todos={todos}
-          setTodos={setTodos}
-          status={status}
-        />
-      </div>
+       <Container fluid style={{ height: '100vh' }} className="layout">
+      <Row style={{ height: '100%' }}>
+        <Col sm={3} className="input-container">
+      <TextImput
+        input={input}
+        setInput={setInput}
+        todos={todos}
+        setTodos={setTodos}
+        setStatus={setStatus}
+      />
+</Col>
+<Col sm={7} className="list-display">
+      <ToDoList
+        filteredTodos={filteredTodos}
+        todos={todos}
+        setTodos={setTodos}
+        status={status}
+      /></Col>
+      </Row>
+    </Container>
     </div>
   );
 };

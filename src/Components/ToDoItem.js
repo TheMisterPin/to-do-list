@@ -1,83 +1,23 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBookmark,
-  faCheckCircle,
-  faTrashCan,
-} from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import ActionButtons from "./ActionButtons";
 
-const ToDoItem = ({ text, todo, todos, setTodos }) => {
-  const prioritizeImportant = (todos) => {
-    return todos
-      .slice()
-      .sort((a, b) => (b.important ? 1 : 0) - (a.important ? 1 : 0));
-  };
-
-  const handleImportant = (id) => {
-    const updatedTodos = todos.map((item) => {
-      if (item.id === id) {
-        return {
-          ...item,
-          important: !item.important,
-        };
-      }
-      return item;
-    });
-
-    const sortedTodos = prioritizeImportant(updatedTodos);
-
-    setTodos(sortedTodos);
-  };
-  const handleComplete = (id) => {
-    setTodos(
-      todos.map((item => {
-        if (item.id === id) {
-          return {
-            ...item, completed: !item.completed,
-
-          };
-        }
-        return item;
-      })),
-    );
-  };
-
-  const handleDelete = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
-  };
-  const [isHovered, setIsHovered] = useState(false);
-
+const ToDoItem = ({ text, todo, setTodos, todos }) => {
   return (
-    <div className={`todo ${todo.important ? "important" : ''
-      }`}>
-      <div className="paper blue">
-        <div className="top-tape"></div> <p
-          className={`todos-list-item ${todo.completed ? "completed" : ''} ${todo.important ? "important" : ''
-            }`}
+    <div className={`todo ${todo.important ? "important" : ""}`}>
+      <div className="paper pink">
+        <div className="tape-section"/>
+        <p
+          className={`todos-list-item ${todo.completed ? "completed" : ""} ${
+            todo.important ? "important" : ""
+          }`}
         >
           {text}
         </p>
-        <div className="list-btn-container">
-          <button className="done-btn" onClick={() => handleComplete(todo.id)}>
-            <FontAwesomeIcon icon={faCheckCircle} />
-          </button>
-
-          <button className="delete-btn" onClick={() => handleDelete(todo.id)}>
-            <FontAwesomeIcon
-              icon={faTrashCan}
-              shake={isHovered ? true : false}
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            />
-          </button>
-
-          <button
-            className="important-btn"
-            onClick={() => handleImportant(todo.id)}
-          >
-            <FontAwesomeIcon icon={faBookmark} />
-          </button>
-        </div>
+        <ActionButtons
+          todo={todo}
+          todos={todos}
+          setTodos={setTodos}
+        />
       </div>
     </div>
   );
