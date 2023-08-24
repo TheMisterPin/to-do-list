@@ -7,52 +7,80 @@
   --transparent: rgba(255, 255, 255, 0);
 }
 
-
 /* App Component */
+
+.App {
+  background-size: 100% 100%;
+}
 * {
   margin: 0;
   padding: 0;
 }
-
-.App {
-  overflow-x: hidden;
-  width: 100vw;
-  height: 100vh;
-  background-color: hsl(34, 78%, 91%);
-}
-body {
-  background: #ebf4e9;
-  padding: 20px;
+.container{ 
   display: flex;
-  justify-content: center;
-  flex-direction: column;
 }
 .layout {
   display: flex;
-  width: 100vw;
-  flex-wrap: wrap;
-  flex-direction: row;
+  padding: 0;
+  justify-content: center;
+  gap: 3vw;
 }
 /* TextImput Component */
 .input-container {
-  background-color: lightgray;  
-  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+
+  
+}
+.todo-input [type="text"]{background-color: rgba(255, 250, 205, 0.029)!important }
+.form-container {background-image: url('./media/Backgrounds/stickynote.png');
+padding: 1.8rem;
 }
 
+.todo-input{
+  margin-top: 2.5rem;
+}
 /* TodoList Component */
 .list-display {
-  height: calc(30vw);  
-  width: calc(30vw);    
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.todo-list  { 
+  height: 69vh;
+  width: 79vw;
+  display: grid;
+  margin-left: -2.3rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(4, 1fr); /* This will create a 3 column grid */
+  gap: 1rem; /* Space between grid items */
 }
 
 /* ToDoItem Component */
+.todos-list-item p {
+  overflow: hidden;
+  white-space: nowrap;
+
+  letter-spacing: 0.15em;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+.todos-list-item {
+  display: block;
+}
 
 .todos-list-item.completed {
   text-decoration: line-through;
 }
 
-
-.todos-list-item.important{color: crimson;}
+.todos-list-item.important {
+  color: crimson;
+}
 
 /* Paper Effect  */
 .pink {
@@ -78,20 +106,19 @@ body {
       var(--transparent)
     ),
     var(--paper-color);
-  min-width: 250px;
-  min-height: 130px;
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: "Caveat", cursive;
-  font-size: 2rem;
+  font-size: 1rem;
   box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
   margin: auto;
   margin-top: 50px;
 }
 
 .paper::after {
- pointer-events: none;
+  pointer-events: none;
   content: "";
   position: absolute;
   width: 100%;
@@ -120,9 +147,9 @@ body {
 
 .top-tape {
   position: absolute;
-  height: 4vmin;
+  height: 1.7vmin;
   top: -5px;
-  width: 110%;
+  width: 55%;
   background-color: var(--tape-gray);
   border-right: 1px dotted var(--tape-edge-gray);
   border-left: 1px dotted var(--tape-edge-gray);
@@ -173,25 +200,21 @@ body {
 }
 
 .btn-Group {
-  z-index: 10; 
-  position: relative; 
+  z-index: 10;
+  position: relative;
 }
 
-.todos-list-item {
-  overflow: hidden; 
-  white-space: nowrap; 
-  margin: 0 auto; 
-  letter-spacing: .15em; 
-  animation: 
-    typing 3.5s steps(40, end),
-    blink-caret .75s step-end infinite;
+.icon {
+height: 50px;
+width: 50px;
 }
 
 /* The typing effect */
 @keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
-
-
-

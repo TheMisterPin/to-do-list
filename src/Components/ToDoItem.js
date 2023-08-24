@@ -5,12 +5,11 @@ const ToDoItem = ({ text, todo, setTodos, todos }) => {
   return (
     <div className={`todo ${todo.important ? "important" : ""}`}>
       <div className="paper pink">
-        <div className="tape-section"/>
-        <p
-          className={`todos-list-item ${todo.completed ? "completed" : ""} ${
+      <div className="top-tape"></div>
+      <li className={`todos-list-item ${todo.completed ? "completed" : ""} ${
             todo.important ? "important" : ""
-          }`}
-        >
+          }`}>
+        <p>
           {text}
         </p>
         <ActionButtons
@@ -18,6 +17,7 @@ const ToDoItem = ({ text, todo, setTodos, todos }) => {
           todos={todos}
           setTodos={setTodos}
         />
+        </li>
       </div>
     </div>
   );

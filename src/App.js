@@ -3,6 +3,8 @@ import React, { useEffect, useState } from "react";
 import TextImput from "./Components/textImput";
 import ToDoList from "./Components/todoList";
 import { Container, Row, Col } from 'react-grid-system';
+import corkboard from './media/Backgrounds/corkboard.jpeg';
+
 
 const App = () => {
   //STATES
@@ -62,10 +64,10 @@ const App = () => {
 
   //RENDER APP
   return (
-    <div className="App">
-       <Container fluid style={{ height: '100vh' }} className="layout">
-      <Row style={{ height: '100%' }}>
-        <Col sm={3} className="input-container">
+    <div className="App"style={{ backgroundImage: `url(${corkboard})` }}>
+       <Container fluid style={{ height: '100vh' }} className="container">
+      <Row className="layout">
+        <Col sm={2} className="input-container">
       <TextImput
         input={input}
         setInput={setInput}
