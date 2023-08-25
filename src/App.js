@@ -12,6 +12,7 @@ const App = () => {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
+  const [count, setCount] = useState("");
 
   //USE EFFECT
   useEffect(() => {
@@ -74,10 +75,12 @@ const App = () => {
         todos={todos}
         setTodos={setTodos}
         setStatus={setStatus}
+        setCount={setCount}
       />
 </Col>
 <Col sm={7} className="list-display">
       <ToDoList
+      count={count}
         filteredTodos={filteredTodos}
         todos={todos}
         setTodos={setTodos}

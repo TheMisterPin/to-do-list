@@ -7,9 +7,12 @@ import IconButton from "@mui/material/IconButton";
 
 
 const {TextArea} = Input
-const TextImput = ({ input, setInput, todos, setTodos, setStatus }) => {
+const TextImput = ({ input, setInput, todos, setTodos, setStatus, setCount,count }) => {
   const onInputChange = (event) => {
+  
     setInput(event.target.value);
+    setCount(event.target.showCount);
+  
   };
   const AddTodo = (event) => {
     event.preventDefault();
