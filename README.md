@@ -11,9 +11,9 @@ Still in early stages of developement, added header, side bar and imput area, no
 Still looks very poor, implemented logic delete, mark as important and done. 
 working on filter.
 
-1.3 
+1.3 still looks poor, implemented filter, and local storage. 
 
-still looks poor, implemented filter, and local storage. 
+1.4 refractored css, rehauled ui, responsive design 
 
 
 
