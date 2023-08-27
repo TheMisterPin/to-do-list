@@ -8,78 +8,63 @@
 }
 
 /* App Component */
+.layout{width: 100vw;height: 100vh;
+background-size: 100% 100%;}
+.main {display: flex;}
 
-.App {
-  background-size: 100% 100%;
-}
-* {
-  margin: 0;
-  padding: 0;
-}
-.container{ 
-  display: flex;
-}
-.layout {
-  display: flex;
-  padding: 0;
-  justify-content: center;
-  gap: 3vw;
-}
+
+
 /* TextImput Component */
 .input-container {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-
-  
+margin-left: 2%;
+  border: #d5e0f9 1px solid;  
 }
-.todo-input [type="text"]{background-color: rgba(255, 250, 205, 0.029)!important }
+
 .form-container {background-image: url('./media/Backgrounds/stickynote.png');
-padding: 1.8rem;
+padding: 1.5rem; display: flex;
+flex-direction: column;
+align-items: center;
+background-repeat: no-repeat;
+
 }
 
 .todo-input{
+  background-color:rgb(55, 134, 55);
   margin-top: 2.5rem;
 }
+
+
 /* TodoList Component */
 .list-display {
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
  
 }
 .todo-list  { 
-  height: 69vh;
-  width: 79vw;
+  width: 60%;
+  list-style: none;
   display: grid;
-  margin-left: -2.3rem;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 1fr); /* This will create a 3 column grid */
-  gap: 1rem; /* Space between grid items */
+  grid-template-rows: repeat(3, 1fr);
+  gap: 1rem; 
 }
 
 /* ToDoItem Component */
 .todos-list-item p {
-  overflow: hidden;
-  white-space: nowrap;
-
+  
+  white-space: nowrap;  
   letter-spacing: 0.15em;
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
-.todos-list-item {
-  display: block;
-}
+
 
 .todos-list-item.completed {
   text-decoration: line-through;
 }
 
 .todos-list-item.important {
-  color: crimson;
+
 }
 
 /* Paper Effect  */
@@ -114,7 +99,7 @@ padding: 1.8rem;
   font-size: 1rem;
   box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
   margin: auto;
-  margin-top: 50px;
+
 }
 
 .paper::after {
@@ -199,16 +184,20 @@ padding: 1.8rem;
   bottom: 0;
 }
 
-.btn-Group {
-  z-index: 10;
-  position: relative;
-}
 
-.icon {
+
+.btn .icon {
 height: 50px;
 width: 50px;
+filter: sepia();
+flex: 1;
+margin: 0cm;
 }
+.btn .icon:hover{filter: sepia(0); flex: 4;}
 
+
+/* footer */
+.footer{background-color:black}
 /* The typing effect */
 @keyframes typing {
   from {

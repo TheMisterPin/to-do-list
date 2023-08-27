@@ -51,29 +51,26 @@ function ActionButtons({ todo, setTodos, todos }) {
       color="primary"
       aria-label="contained primary button group"
     >
-      <IconButton
-      size="small"
+      <IconButton style={{height: 40}}
         className="delete btn"
         aria-label="delete"
         onClick={() => handleDelete(todo.id)}
       >
-    <DeleteIcon className="icon" size="small"/>
+    <DeleteIcon className="icon" style={{height: 40}}/>
       </IconButton>
-      <IconButton
-      size="small"
+      <IconButton style={{height: 40}}
         className="important btn"
         aria-label="important"
         onClick={() => handleImportant(todo.id)}
       >
-        <ImportantIcon className="icon" size="small"/>
+        <ImportantIcon className="icon" style={{height: 40}}/>
       </IconButton>
-      <IconButton
-      size="small"
+      <IconButton  style={{height: 40}}
         className="done btn"
         aria-label="done"
         onClick={() => handleComplete(todo.id)}
       >
-<CheckboxIcon className="icon" size="small"/>
+<CheckboxIcon className="icon" style={{height: 40}} />
       </IconButton>
     </ButtonGroup>
   );

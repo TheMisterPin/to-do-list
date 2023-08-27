@@ -1,5 +1,6 @@
 import React from "react";
 import ActionButtons from "./ActionButtons";
+import { Col } from "antd";
 
 const ToDoItem = ({ text, todo, setTodos, todos }) => {
   return (
@@ -19,7 +20,8 @@ const ToDoItem = ({ text, todo, setTodos, todos }) => {
         />
         </li>
       </div>
-    </div>
+      </div>
+
   );
 };
 export default ToDoItem;

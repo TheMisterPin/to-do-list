@@ -20,6 +20,7 @@ const TextImput = ({ input, setInput, todos, setTodos, setStatus, setCount,count
       ...todos,
       { id: uuidV4(), text: input, completed: false, important: false },
     ]);
+    
     setInput("");
   };
   const statusHandler = (e) => {
@@ -33,19 +34,17 @@ const TextImput = ({ input, setInput, todos, setTodos, setStatus, setCount,count
         onPressEnter={AddTodo}
         minLength={2}
         maxLength={100}
-        style={{ height: 120, marginBottom: 24 }}
+        style={{ height: 120, }}
         placeholder="Do Me Next"
         type="text"
         className="todo-input"
         value={input}
         onChange={onInputChange}/>
      <IconButton
-      size="small"
-        className="add btn"
         aria-label="add"
         type="submit"onClick={AddTodo}
       >
-        <AddIcon className="icon" size="small"/>
+        <AddIcon className="icon" style={{height: 100, width:100}}/>
       </IconButton></div>
 
       <div className="filter-container">

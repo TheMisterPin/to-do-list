@@ -2,10 +2,8 @@ import "./App.css";
 import React, { useEffect, useState } from "react";
 import TextImput from "./Components/textImput";
 import ToDoList from "./Components/todoList";
-import { Container, Row, Col } from 'react-grid-system';
-import corkboard from './media/Backgrounds/corkboard.jpeg';
-
-
+import corkboard from "./media/Backgrounds/corkboard.jpeg";
+import { Layout } from "antd";
 const App = () => {
   //STATES
   const [input, setInput] = useState("");
@@ -43,11 +41,9 @@ const App = () => {
     }
   };
 
+  // LAYOUT
+  const { Header, Content, Footer, Sider } = Layout;
 
-
-    
- 
-  
   // LOCAL STORAGE
   const saveLocalTodos = () => {
     if (todos.length > 0) {
@@ -65,29 +61,39 @@ const App = () => {
 
   //RENDER APP
   return (
-    <div className="App"style={{ backgroundImage: `url(${corkboard})` }}>
-       <Container fluid style={{ height: '100vh' }} className="container">
-      <Row className="layout">
-        <Col sm={2} className="input-container">
-      <TextImput
-        input={input}
-        setInput={setInput}
-        todos={todos}
-        setTodos={setTodos}
-        setStatus={setStatus}
-        setCount={setCount}
-      />
-</Col>
-<Col sm={7} className="list-display">
-      <ToDoList
-      count={count}
-        filteredTodos={filteredTodos}
-        todos={todos}
-        setTodos={setTodos}
-        status={status}
-      /></Col>
-      </Row>
-    </Container>
+    <div className="App">
+      <Layout
+        style={{ backgroundImage: `url(${corkboard})` }}
+        className="layout"
+      ><Header className="Header"></Header>
+        
+        <Content className ="main" >
+          {" "}
+          <Layout style={{background:"transparent"}}>
+            <Sider style={{background:"transparent"}} className="input-container">
+              <TextImput
+                input={input}
+                setInput={setInput}
+                todos={todos}
+                setTodos={setTodos}
+                setStatus={setStatus}
+                setCount={setCount}
+              />
+            </Sider>
+
+            <Content className="list-display" >
+              <ToDoList
+                count={count}
+                filteredTodos={filteredTodos}
+                todos={todos}
+                setTodos={setTodos}
+                status={status}
+              />
+            </Content>
+          </Layout>
+        </Content>
+        <Footer className="footer"> </Footer>
+      </Layout>
     </div>
   );
 };
