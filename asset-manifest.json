@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "/to-do-list/static/css/main.c1b57fe8.css",
-    "main.js": "/to-do-list/static/js/main.9c11f339.js",
+    "main.css": "/to-do-list/static/css/main.252478a7.css",
+    "main.js": "/to-do-list/static/js/main.54fa9a41.js",
     "static/media/corkboard.jpeg": "/to-do-list/static/media/corkboard.7e58c4baa77c6ac4c3f8.jpeg",
-    "static/media/stickynote.png": "/to-do-list/static/media/stickynote.e45c45f34ed35dea2114.png",
     "static/media/addIcon.svg": "/to-do-list/static/media/addIcon.4e243944ed24c4885c0cd0c12f8e8aed.svg",
     "static/media/importantIcon.svg": "/to-do-list/static/media/importantIcon.0c42e876478a9f308b8b8961c8d92de7.svg",
     "static/media/CheckBoxIcon.svg": "/to-do-list/static/media/CheckBoxIcon.8f1ea1505f5fd704b40679bece835cda.svg",
     "static/media/deleteIcon.svg": "/to-do-list/static/media/deleteIcon.c2bd71b9a729b2daab99491e7bf1b5a2.svg",
     "index.html": "/to-do-list/index.html",
-    "main.c1b57fe8.css.map": "/to-do-list/static/css/main.c1b57fe8.css.map",
-    "main.9c11f339.js.map": "/to-do-list/static/js/main.9c11f339.js.map"
+    "main.252478a7.css.map": "/to-do-list/static/css/main.252478a7.css.map",
+    "main.54fa9a41.js.map": "/to-do-list/static/js/main.54fa9a41.js.map"
   },
   "entrypoints": [
-    "static/css/main.c1b57fe8.css",
-    "static/js/main.9c11f339.js"
+    "static/css/main.252478a7.css",
+    "static/js/main.54fa9a41.js"
   ]
 }
