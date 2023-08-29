@@ -1,6 +1,4 @@
 import React from "react";
-import IconButton from "@mui/material/IconButton";
-import ButtonGroup from "@mui/material/ButtonGroup";
 import { ReactComponent as DeleteIcon } from "../media/icons/deleteIcon.svg";
 import { ReactComponent as ImportantIcon } from "../media/icons/importantIcon.svg";
 import { ReactComponent as CheckboxIcon } from "../media/icons/CheckBoxIcon.svg";
@@ -10,6 +8,11 @@ function ActionButtons({ todo, setTodos, todos }) {
     return todos
       .slice()
       .sort((a, b) => (b.important ? 1 : 0) - (a.important ? 1 : 0));
+  };
+  const moveCompleted = (todos) => {
+    return todos
+      .slice()
+      .sort((a, b) => (a.completed ? 1 : 0) - (b.completed ? 1 : 0));
   };
 
   const handleImportant = (id) => {
@@ -27,9 +30,9 @@ function ActionButtons({ todo, setTodos, todos }) {
 
     setTodos(sortedTodos);
   };
+
   const handleComplete = (id) => {
-    setTodos(
-      todos.map((item) => {
+      const updatedTodos = todos.map((item) => {
         if (item.id === id) {
           return {
             ...item,
@@ -37,8 +40,10 @@ function ActionButtons({ todo, setTodos, todos }) {
           };
         }
         return item;
-      }),
-    );
+      })
+    const sortedTodos = moveCompleted(updatedTodos);
+
+    setTodos(sortedTodos);
   };
 
   const handleDelete = (id) => {

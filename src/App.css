@@ -133,11 +133,17 @@ justify-content: center;}
   --transparent: rgba(236, 178, 186, 0);
 }
 .completed {height: 100%;
-  --paper-color: var(--pink);
-  --paper-dark: var(--pink-dark);
+  --paper-color: grey;
+  --paper-dark: grey;
   --shadow-size: 1px;
   --transparent: rgba(236, 178, 186, 0);
-}
+  opacity: 0.7;
+  background-image: url(C:\Users\pinmi\OneDrive\Desktop\web\Assembler\to-do-list\src\media\Backgrounds\checkmark.png);
+background-size: contain;
+background-repeat: no-repeat;
+background-position: center;}
+
+.important{}
 .blue {
   --paper-color: #d5e0f9;
   --paper-dark: #c2d0ea;

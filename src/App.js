@@ -12,6 +12,7 @@ const App = () => {
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
   const [count, setCount] = useState("");
+  const [color, setColor] = useState("");
 
   //USE EFFECT
   useEffect(() => {
@@ -81,6 +82,8 @@ const App = () => {
                 setTodos={setTodos}
                 setStatus={setStatus}
                 setCount={setCount}
+                color={color}
+                setColor={setColor}
               />
             </Sider>
             
