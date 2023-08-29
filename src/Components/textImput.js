@@ -11,24 +11,32 @@ const TextImput = ({ input, setInput, todos, setTodos, setStatus, setCount,count
   const onInputChange = (event) => {
   
     setInput(event.target.value);
-    setCount(event.target.showCount);
+    setCount(event.target.value.length);
   
   };
+
+
   const AddTodo = (event) => {
     event.preventDefault();
     setTodos([
       ...todos,
-      { id: uuidV4(), text: input, completed: false, important: false },
+      { id: uuidV4(), text: input, completed: false, important: false, count: {count} },
     ]);
     
     setInput("");
   };
+
+
   const statusHandler = (e) => {
     setStatus(e.target.value);
   };
+
+
   return (
     <>
-    <div className="form-container">
+    <div className="form-container paper blue">
+      <div className="title-tape"/>
+    <h1>New Todo</h1>
       <TextArea
         showCount
         onPressEnter={AddTodo}

@@ -4,6 +4,7 @@ import TextImput from "./Components/textImput";
 import ToDoList from "./Components/todoList";
 import corkboard from "./media/Backgrounds/corkboard.jpeg";
 import { Layout } from "antd";
+import ListHeader from "./Components/ListHeader";
 const App = () => {
   //STATES
   const [input, setInput] = useState("");
@@ -61,16 +62,18 @@ const App = () => {
 
   //RENDER APP
   return (
-    <div className="App">
+    <div className="App" style={{ backgroundImage: `url(${corkboard})` }}>
       <Layout
-        style={{ backgroundImage: `url(${corkboard})` }}
-        className="layout"
-      ><Header className="Header"></Header>
         
-        <Content className ="main" >
+        className="layout" style={{background:"transparent"}}
+      >
+      <Header className="header"> <ListHeader className="ListHeader" /> </Header>
+        <Content style={{ display: 'flex'}}>
           {" "}
-          <Layout style={{background:"transparent"}}>
-            <Sider style={{background:"transparent"}} className="input-container">
+          <Layout  className ="main" style={{background:"transparent"}} >
+            
+            <Sider style={{background:"transparent"}} width={270} className="input-container">
+             
               <TextImput
                 input={input}
                 setInput={setInput}
@@ -80,7 +83,8 @@ const App = () => {
                 setCount={setCount}
               />
             </Sider>
-
+            
+ 
             <Content className="list-display" >
               <ToDoList
                 count={count}
@@ -92,7 +96,6 @@ const App = () => {
             </Content>
           </Layout>
         </Content>
-        <Footer className="footer"> </Footer>
       </Layout>
     </div>
   );

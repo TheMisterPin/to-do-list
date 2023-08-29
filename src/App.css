@@ -1,80 +1,143 @@
 /*Roots, Imports, functions*/
 :root {
-  --pink: #ecb2ba;
-  --pink-dark: #c6939a;
+  --pink: hsl(352, 60%, 81%);
+  --pink-dark: hsl(352, 31%, 68%);
   --tape-gray: #dbd8be;
   --tape-edge-gray: #b7b49d;
   --transparent: rgba(255, 255, 255, 0);
 }
+@font-face {
+  font-family: 'Rocher';
+  src: url(https://assets.codepen.io/9632/RocherColorGX.woff2);
+}
+
+@font-palette-values --textInput {
+  font-family: Rocher;
+  base-palette: 2;
+}
+
+@font-palette-values --header {
+  font-family: Rocher;
+  base-palette: 8;
+
+}
 
 /* App Component */
-.layout{width: 100vw;height: 100vh;
-background-size: 100% 100%;}
-.main {display: flex;}
-
-
+.layout{width: 100vw;height: 100vh;}
+.main {display: flex;
+  height: 100%;
+  width: 100%;
+  gap: 5%;
+}
+*{ white-space: normal;}
+.App{background-size: 100% 100%;}
 
 /* TextImput Component */
 .input-container {
-margin-left: 2%;
-  border: #d5e0f9 1px solid;  
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+}
+.input-container :first-child{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 90%;
+ 
+  
 }
 
-.form-container {background-image: url('./media/Backgrounds/stickynote.png');
-padding: 1.5rem; display: flex;
+.form-container {
+  height: fit-content;
+display: flex;
+padding: 0 4% ;
 flex-direction: column;
 align-items: center;
 background-repeat: no-repeat;
 
 }
-
-.todo-input{
-  background-color:rgb(55, 134, 55);
-  margin-top: 2.5rem;
+/*headers */
+.header {background-color: transparent; display: flex;justify-content: center;}
+.header * { margin: 0;}
+.form-container h1 {
+  font-family: Rocher;
+  font-palette: --textInput;
+  }
+.list-header {
+  margin: 0;
+  font-family: Rocher;
+font-palette:  --header;
+font-size: xx-large;
 }
-
 
 /* TodoList Component */
 .list-display {
-
+display: flex;
+align-items:center ;
+padding-left: 2%;
 
  
 }
 .todo-list  { 
-  width: 60%;
+  width: 80%;
+  height: 65%;
+  max-height: 65%;
+  overflow-y: scroll;
+  scroll-behavior: var(--pink);
   list-style: none;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 30%);
+  grid-template-rows: repeat(3, 33%);
   gap: 1rem; 
+  padding: 0;
+}
+
+.todo-list::-webkit-scrollbar {
+  display: none;
+}
+
+
+.todo-list {
+-ms-overflow-style: none;  
+scrollbar-width: none;  
 }
 
 /* ToDoItem Component */
 .todos-list-item p {
-  
-  white-space: nowrap;  
-  letter-spacing: 0.15em;
+  padding:5%;
+  max-width: 95%;
+  max-height: 55%;
   animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
 }
-
-
 
 .todos-list-item.completed {
   text-decoration: line-through;
 }
 
-.todos-list-item.important {
+.todos-list-item {
+width: 100%;
+height: 100%;
+display: block;
+align-items: center;
+justify-content: center;}
 
-}
 
-/* Paper Effect  */
+
+
 .pink {
+ height: 100%;
   --paper-color: var(--pink);
   --paper-dark: var(--pink-dark);
   --shadow-size: 1px;
   --transparent: rgba(236, 178, 186, 0);
 }
-
+.completed {height: 100%;
+  --paper-color: var(--pink);
+  --paper-dark: var(--pink-dark);
+  --shadow-size: 1px;
+  --transparent: rgba(236, 178, 186, 0);
+}
 .blue {
   --paper-color: #d5e0f9;
   --paper-dark: #c2d0ea;
@@ -83,6 +146,7 @@ background-repeat: no-repeat;
 }
 
 .paper {
+ 
   position: relative;
   background: linear-gradient(
       to bottom right,
@@ -95,8 +159,6 @@ background-repeat: no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Caveat", cursive;
-  font-size: 1rem;
   box-shadow: var(--shadow-size) var(--shadow-size) 2px var(--paper-dark);
   margin: auto;
 
@@ -140,7 +202,16 @@ background-repeat: no-repeat;
   border-left: 1px dotted var(--tape-edge-gray);
   opacity: 0.5;
 }
-
+.title-tape {
+  position: absolute;
+  height: 3.7vmin;
+  top: -15px;
+  width: 55%;
+  background-color: var(--tape-gray);
+  border-right: 1px dotted var(--tape-edge-gray);
+  border-left: 1px dotted var(--tape-edge-gray);
+  opacity: 0.7;
+}
 .tape-section:first-of-type {
   top: 0;
 }
@@ -184,16 +255,17 @@ background-repeat: no-repeat;
   bottom: 0;
 }
 
+/* buttons */
+.btn-group{position: absolute;
+  bottom: 0;
+ }
 
-
-.btn .icon {
-height: 50px;
-width: 50px;
+.btn  {
 filter: sepia();
-flex: 1;
-margin: 0cm;
+transition: all .2s ease-in-out; ;
 }
-.btn .icon:hover{filter: sepia(0); flex: 4;}
+.btn:hover{filter: sepia(0);
+  transform: scale(1.4);}
 
 
 /* footer */
@@ -204,6 +276,6 @@ margin: 0cm;
     width: 0;
   }
   to {
-    width: 100%;
+    width:100%;
   }
 }

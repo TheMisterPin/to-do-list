@@ -1,8 +1,8 @@
 import React from "react";
 import IconButton from "@mui/material/IconButton";
 import ButtonGroup from "@mui/material/ButtonGroup";
-import { ReactComponent as DeleteIcon  } from "../media/icons/deleteIcon.svg";
-import{ ReactComponent as ImportantIcon }  from "../media/icons/importantIcon.svg";
+import { ReactComponent as DeleteIcon } from "../media/icons/deleteIcon.svg";
+import { ReactComponent as ImportantIcon } from "../media/icons/importantIcon.svg";
 import { ReactComponent as CheckboxIcon } from "../media/icons/CheckBoxIcon.svg";
 
 function ActionButtons({ todo, setTodos, todos }) {
@@ -45,34 +45,26 @@ function ActionButtons({ todo, setTodos, todos }) {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
   return (
-    <ButtonGroup
-      className="btn-Group"
-      variant="contained"
-      color="primary"
-      aria-label="contained primary button group"
-    >
-      <IconButton style={{height: 40}}
+    <div className="btn-group">
+      <DeleteIcon
+      style={{ height: 55, width: 55 }}
         className="delete btn"
         aria-label="delete"
         onClick={() => handleDelete(todo.id)}
-      >
-    <DeleteIcon className="icon" style={{height: 40}}/>
-      </IconButton>
-      <IconButton style={{height: 40}}
+      />
+      <ImportantIcon
+      style={{ height: 55, width: 55 }}
         className="important btn"
         aria-label="important"
         onClick={() => handleImportant(todo.id)}
-      >
-        <ImportantIcon className="icon" style={{height: 40}}/>
-      </IconButton>
-      <IconButton  style={{height: 40}}
+      />
+
+   
+        <CheckboxIcon style={{ height: 55, width: 55 }}
         className="done btn"
         aria-label="done"
-        onClick={() => handleComplete(todo.id)}
-      >
-<CheckboxIcon className="icon" style={{height: 40}} />
-      </IconButton>
-    </ButtonGroup>
+        onClick={() => handleComplete(todo.id)}/>
+    </div>
   );
 }
 
