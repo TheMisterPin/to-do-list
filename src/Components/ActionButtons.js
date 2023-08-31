@@ -12,7 +12,9 @@ function ActionButtons({ todo, setTodos, todos }) {
   const moveCompleted = (todos) => {
     return todos
       .slice()
+   
       .sort((a, b) => (a.completed ? 1 : 0) - (b.completed ? 1 : 0));
+  
   };
 
   const handleImportant = (id) => {
