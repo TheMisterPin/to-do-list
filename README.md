@@ -12,7 +12,11 @@ This React Todo App is a personal project created as an introduction to React an
 - **Task Completion** ✔️: Mark tasks as 'Done' once completed.
 - **Simple UI** 🖌️: A clean user interface that's easy to navigate.
 
+![App Screenshot 1](URL_TO_SCREENSHOT_1) ![App Screenshot 2](URL_TO_SCREENSHOT_2) ![App Screenshot 3](URL_TO_SCREENSHOT_3)
+
 [View the Repository on GitHub](https://github.com/TheMisterPin/to-do-list)
+
+[See the Live App Here](https://themisterpin.github.io/to-do-list/)
 
 
 ## Getting Started
